@@ -28,7 +28,7 @@ public class Libro {
     @Column(name = "fechapub",nullable = false)
     private Date date;
 
-    @Column(name="enlaceimagen",nullable = false,columnDefinition = "TEXT(500)")
+    @Column(name="enlaceimagen",columnDefinition = "TEXT(500)")
     private String enlaceimagen;
 
 
