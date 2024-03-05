@@ -43,5 +43,9 @@ public class LibroController {
     public ResponseEntity<CustomReponse<List<Libro>>> getOrderAutor(@PathVariable int ascdesc){
         return new ResponseEntity<>(libroService.getByAutor(ascdesc), HttpStatus.OK);
     }
+    @GetMapping("/get/imagen")
+    public ResponseEntity<CustomReponse<List<Libro>>> getOrderAutor(){
+        return new ResponseEntity<>(libroService.getByImagen(), HttpStatus.OK);
+    }
 
 }

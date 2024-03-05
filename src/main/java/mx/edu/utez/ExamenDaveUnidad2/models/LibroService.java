@@ -106,4 +106,13 @@ public class LibroService {
                 "Ok"
         );
     }
+    public CustomReponse<List<Libro>> getByImagen() {
+        List<Libro> libros=libroRepository.getLibroOrderByImagen();
+        return new CustomReponse<>(
+                libros,
+                false,
+                200,
+                "Ok"
+        );
+    }
 }

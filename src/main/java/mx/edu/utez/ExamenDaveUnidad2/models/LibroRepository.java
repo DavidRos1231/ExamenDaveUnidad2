@@ -28,4 +28,9 @@ public interface LibroRepository extends JpaRepository<Libro,Long> {
             nativeQuery = true
     )
     List<Libro> getLibroOrderByAutor();
+    @Query(
+            value = "SELECT * FROM examendaveu2.libro ORDER BY enlaceimagen desc",
+            nativeQuery = true
+    )
+    List<Libro> getLibroOrderByImagen();
 }
