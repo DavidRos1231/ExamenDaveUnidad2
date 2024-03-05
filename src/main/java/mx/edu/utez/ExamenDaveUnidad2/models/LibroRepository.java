@@ -29,7 +29,7 @@ public interface LibroRepository extends JpaRepository<Libro,Long> {
     )
     List<Libro> getLibroOrderByAutor();
     @Query(
-            value = "SELECT * FROM examendaveu2.libro ORDER BY enlaceimagen desc",
+            value = "SELECT * FROM examendaveu2.libro where enlaceimagen is not null",
             nativeQuery = true
     )
     List<Libro> getLibroOrderByImagen();
