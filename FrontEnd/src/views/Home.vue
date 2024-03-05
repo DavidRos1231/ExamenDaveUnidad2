@@ -5,8 +5,7 @@
       <b-carousel-slide v-for="(image, index) in images" :key="index" :img-src="image"></b-carousel-slide>
     </b-carousel>
 
-
-    <!-- Contenedor principal -->
+    <!-- Contenedor prcipal -->
 
     <div class='container mt-4 mb-10'>
       <b-container class="bv-example-row">
@@ -191,6 +190,7 @@ startDrag(event, libro) {
         )
         alert('Libro guardado') 
           this.$bvModal.hide('bv-modal-example')
+          this.getLibros()
       } catch (error) {
         console.log(error)
         alert('Error al guardar el libro')
