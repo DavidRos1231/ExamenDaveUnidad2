@@ -33,4 +33,9 @@ public interface LibroRepository extends JpaRepository<Libro,Long> {
             nativeQuery = true
     )
     List<Libro> getLibroOrderByImagen();
+    @Query(
+            value = "SELECT enlaceimagen FROM examendaveu2.libro where enlaceimagen is not null",
+            nativeQuery = true
+    )
+    List<String> getImages();
 }

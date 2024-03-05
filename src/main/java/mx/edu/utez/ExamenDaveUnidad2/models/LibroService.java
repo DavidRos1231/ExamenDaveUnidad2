@@ -115,4 +115,13 @@ public class LibroService {
                 "Ok"
         );
     }
+    public CustomReponse<List<String>> getImages() {
+        List<String> images=libroRepository.getImages();
+        return new CustomReponse<>(
+                images,
+                false,
+                200,
+                "Ok"
+        );
+    }
 }
