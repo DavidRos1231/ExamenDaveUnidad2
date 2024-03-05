@@ -5,6 +5,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -67,5 +68,42 @@ public class LibroService {
             );
         }
 
+    }
+
+    public CustomReponse<List<Libro>> getbyFecha(int ascdesc) {
+        List<Libro> libros=libroRepository.getLibroOrderByFecha();
+        if(ascdesc!=0){
+            Collections.reverse(libros);
+        }
+        return new CustomReponse<>(
+                libros,
+                false,
+                200,
+                "Ok"
+        );
+    }
+    public CustomReponse<List<Libro>> getbyNombre(int ascdesc) {
+        List<Libro> libros=libroRepository.getLibroOrderByNombre();
+        if(ascdesc!=0){
+            Collections.reverse(libros);
+        }
+        return new CustomReponse<>(
+                libros,
+                false,
+                200,
+                "Ok"
+        );
+    }
+    public CustomReponse<List<Libro>> getByAutor(int ascdesc) {
+        List<Libro> libros=libroRepository.getLibroOrderByAutor();
+        if(ascdesc!=0){
+            Collections.reverse(libros);
+        }
+        return new CustomReponse<>(
+                libros,
+                false,
+                200,
+                "Ok"
+        );
     }
 }

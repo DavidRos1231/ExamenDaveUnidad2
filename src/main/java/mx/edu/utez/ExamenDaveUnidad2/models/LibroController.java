@@ -31,5 +31,17 @@ public class LibroController {
     public ResponseEntity<CustomReponse<String>> delete(@PathVariable Long id){
         return new ResponseEntity<>(libroService.delete(id), HttpStatus.OK);
     }
+    @GetMapping("/get/fecha/{ascdesc}")
+    public ResponseEntity<CustomReponse<List<Libro>>> getOrderFecha(@PathVariable int ascdesc){
+        return new ResponseEntity<>(libroService.getbyFecha(ascdesc), HttpStatus.OK);
+    }
+    @GetMapping("/get/nombre/{ascdesc}")
+    public ResponseEntity<CustomReponse<List<Libro>>> getOrderNombre(@PathVariable int ascdesc){
+        return new ResponseEntity<>(libroService.getbyNombre(ascdesc), HttpStatus.OK);
+    }
+    @GetMapping("/get/autor/{ascdesc}")
+    public ResponseEntity<CustomReponse<List<Libro>>> getOrderAutor(@PathVariable int ascdesc){
+        return new ResponseEntity<>(libroService.getByAutor(ascdesc), HttpStatus.OK);
+    }
 
 }
